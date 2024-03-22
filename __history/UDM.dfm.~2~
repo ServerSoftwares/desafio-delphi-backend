@@ -1,0 +1,39 @@
+object DM: TDM
+  Height = 480
+  Width = 640
+  object IBConnection: TFDConnection
+    Params.Strings = (
+      'Database=C:\Projetos\Estudo\desafio-delphi-backend\DBDESAFIO.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'Server=127.0.0.1'
+      'Port=3050'
+      'CharacterSet=ASCII'
+      'DriverID=FB')
+    LoginPrompt = False
+    Left = 56
+    Top = 40
+  end
+  object IBTransaction: TFDTransaction
+    Connection = IBConnection
+    Left = 56
+    Top = 128
+  end
+  object SQLCEP: TFDQuery
+    Connection = IBConnection
+    Transaction = IBTransaction
+    Left = 232
+    Top = 128
+  end
+  object IBTransactionModifica: TFDTransaction
+    Connection = IBConnection
+    Left = 56
+    Top = 192
+  end
+  object SQLModifica: TFDQuery
+    Connection = IBConnection
+    Transaction = IBTransactionModifica
+    Left = 56
+    Top = 256
+  end
+end

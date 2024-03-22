@@ -1,0 +1,25 @@
+unit UFunctions;
+
+interface
+
+uses
+  FireDAC.Comp.Client;
+
+type
+  TFunctions = class
+  private
+
+  public
+    class procedure ExecutaSQL(SQL: string; Query:TFDQuery);
+  end;
+
+implementation
+
+{ TFunctions }
+
+class procedure TFunctions.ExecutaSQL(SQL: string; Query: TFDQuery);
+begin
+  //
+end;
+
+end.
