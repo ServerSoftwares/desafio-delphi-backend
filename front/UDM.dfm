@@ -3,7 +3,9 @@ object DM: TDM
   Width = 249
   object FDConnection: TFDConnection
     Params.Strings = (
-      'Database=C:\Projetos\Estudo\desafio-delphi-backend\DBDESAFIO.FDB'
+      
+        'Database=C:\Projetos\Estudo\desafio-delphi-backend\front\DBDESAF' +
+        'IO_LOCAL.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Server=127.0.0.1'

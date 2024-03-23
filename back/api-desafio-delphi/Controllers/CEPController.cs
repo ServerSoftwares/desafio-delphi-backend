@@ -18,7 +18,7 @@ namespace api_desafio_delphi.Controllers
             {
                 TCEP? obj = new CEPDAO().CarregarPorCEP(cep);
                 if (obj != null)
-                    return Ok(new Response("Sucesso", "CEP encontrado", obj));
+                    return Ok(new Response(obj.CEP, "CEP encontrado", obj));
                 else
                     throw new Exception("CEP não encontrado");
             }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\Estudo\\api-desafio-delphi\\api-desafio-delphi\\api-desafio-delphi.csproj": {}
+    "C:\\Projetos\\Estudo\\desafio-delphi-backend\\back\\api-desafio-delphi\\api-desafio-delphi.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\Estudo\\api-desafio-delphi\\api-desafio-delphi\\api-desafio-delphi.csproj": {
+    "C:\\Projetos\\Estudo\\desafio-delphi-backend\\back\\api-desafio-delphi\\api-desafio-delphi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\Estudo\\api-desafio-delphi\\api-desafio-delphi\\api-desafio-delphi.csproj",
+        "projectUniqueName": "C:\\Projetos\\Estudo\\desafio-delphi-backend\\back\\api-desafio-delphi\\api-desafio-delphi.csproj",
         "projectName": "api-desafio-delphi",
-        "projectPath": "C:\\Projetos\\Estudo\\api-desafio-delphi\\api-desafio-delphi\\api-desafio-delphi.csproj",
+        "projectPath": "C:\\Projetos\\Estudo\\desafio-delphi-backend\\back\\api-desafio-delphi\\api-desafio-delphi.csproj",
         "packagesPath": "C:\\Users\\iband\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\Estudo\\api-desafio-delphi\\api-desafio-delphi\\obj\\",
+        "outputPath": "C:\\Projetos\\Estudo\\desafio-delphi-backend\\back\\api-desafio-delphi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\iband\\AppData\\Roaming\\NuGet\\NuGet.Config",

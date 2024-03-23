@@ -65,12 +65,12 @@ object FPrincipal: TFPrincipal
   object MEdtCEP: TMaskEdit
     Left = 88
     Top = 25
-    Width = 57
+    Width = 65
     Height = 23
     EditMask = '00000\-999;1;_'
     MaxLength = 9
     TabOrder = 1
-    Text = '     -   '
+    Text = '94090-710'
   end
   object EdtCEP: TEdit
     Left = 48

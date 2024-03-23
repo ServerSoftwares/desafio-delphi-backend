@@ -38,7 +38,7 @@ var
   SQL: string;
   CEP: TCEP;
 begin
-  Query.Create(nil);
+  Query:= TFDQuery.Create(nil);
   Query.Connection:= FConnection;
   Query.Transaction:= FTransaction;
 
@@ -54,6 +54,7 @@ end;
 constructor TCEPDAO.Create(AConnection: TFDConnection; ATransaction: TFDTransaction);
 begin
   FConnection := AConnection;
+  FTransaction := ATransaction;
 end;
 
 procedure TCEPDAO.InserirDados(const CEP: TCEP);
@@ -63,7 +64,7 @@ var
 begin
   try
     try
-      Query.Create(nil);
+      Query:= TFDQuery.Create(nil);
       Query.Connection:= FConnection;
       Query.Transaction:= FTransaction;
 
@@ -91,7 +92,7 @@ var
 begin
   try
     try
-      Query.Create(nil);
+      Query:= TFDQuery.Create(nil);
       Query.Connection:= FConnection;
       Query.Transaction:= FTransaction;
 
