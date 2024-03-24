@@ -1,4 +1,5 @@
 object DM: TDM
+  OnCreate = DataModuleCreate
   Height = 321
   Width = 249
   object FDConnection: TFDConnection
@@ -23,11 +24,5 @@ object DM: TDM
     Connection = FDConnection
     Left = 56
     Top = 128
-  end
-  object SQLCEP: TFDQuery
-    Connection = FDConnection
-    Transaction = FDTransaction
-    Left = 56
-    Top = 209
   end
 end

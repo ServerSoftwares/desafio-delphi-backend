@@ -14,7 +14,7 @@ type
   TDM = class(TDataModule)
     FDConnection: TFDConnection;
     FDTransaction: TFDTransaction;
-    SQLCEP: TFDQuery;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,5 +29,16 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TDM.DataModuleCreate(Sender: TObject);
+var
+  Caminho: string;
+begin
+  Caminho:= ExtractFileDir(ParamStr(0));
+  Caminho:= ExtractFileDir(Caminho);
+  Caminho:= ExtractFileDir(Caminho);
+
+  FDConnection.Params.Database:= Caminho + '\DBDESAFIO_LOCAL.FDB';
+end;
 
 end.
