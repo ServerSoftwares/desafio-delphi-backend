@@ -10,7 +10,7 @@ object DM: TDM
       'Password=masterkey'
       'Server=127.0.0.1'
       'Port=3050'
-      'CharacterSet=ASCII'
+      'CharacterSet=WIN1252'
       'DriverID=FB')
     ResourceOptions.AssignedValues = [rvAutoReconnect]
     ResourceOptions.AutoReconnect = True

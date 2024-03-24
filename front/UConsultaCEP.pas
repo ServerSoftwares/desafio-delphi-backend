@@ -51,31 +51,16 @@ begin
   try
     try
       RESTClient:= TRESTClient.Create('https://localhost:32768/api/');
-      RESTRequest:= TRESTRequest.Create(nil);
+
       RESTResponse:= TRESTResponse.Create(nil);
 
+      RESTRequest:= TRESTRequest.Create(nil);
       RESTRequest.Client:= RESTClient;
       RESTRequest.Response:= RESTResponse;
-
-      RESTClient.AcceptCharset := 'application/json';
-      RESTClient.ContentType := 'application/json;charset=utf-8';
-
-      RESTRequest.ResetToDefaults;
-      RESTRequest.AcceptCharset := 'application/json';
-      RESTRequest.Method := rmGET;
-      RESTRequest.ConnectTimeout:= 5 * 1000;
-
-      RESTRequest.Params.Clear;
-      RESTRequest.Params.Add;
-      RESTRequest.Params[0].ContentType := ctAPPLICATION_JSON;
-      RESTRequest.Params[0].Kind := pkHTTPHEADER;
-      RESTRequest.Params[0].name := 'Content-Type';
-      RESTRequest.Params[0].Options := [poDoNotEncode];
-      RESTRequest.Params[0].Value := 'application/json';
+      RESTRequest.Timeout:= 5 * 1000;
 
       RESTRequest.ResourceSuffix := 'cep/consultar?cep=' + Cep;
-
-      RESTResponse.ResetToDefaults;
+      RESTRequest.Method := rmGET;
 
       RESTRequest.Execute;
 
@@ -97,8 +82,9 @@ begin
       end
       else
       begin
-        Retorno.Sucesso:= False;
+        Retorno.Sucesso:= True;
         Retorno.Mensagem:= Response.Values['message'].Value;
+        Retorno.CEP:= TCEP.Create;
       end;
 
       Result:= Retorno;
@@ -106,7 +92,11 @@ begin
       on E: Exception do
       begin
         Retorno.Sucesso:= False;
-        Retorno.Mensagem:= 'FALHA: '+E.Message;
+
+        if E.Message = 'REST request failed: Error sending data: (12002) O tempo limite da operação foi atingido' then
+          Retorno.Mensagem:= 'Serviço temporariamente indisponível. Por favor tente mais tarde.'
+        else
+          Retorno.Mensagem:= E.Message;
         Result:= Retorno;
       end;
     end;

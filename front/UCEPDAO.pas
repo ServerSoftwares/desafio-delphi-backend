@@ -19,7 +19,6 @@ type
     FTransaction: TFDTransaction;
   public
     constructor Create(AConnection: TFDConnection; ATransaction: TFDTransaction);
-    procedure InserirDados(const CEP: TCEP);
     procedure ManterDados(const CEP: TCEP);
     function BuscarPorCEP(const ACEP: string): TCEP;
     function Mapear(Query: TFDQuery): TCEP;
@@ -57,34 +56,6 @@ begin
   FTransaction := ATransaction;
 end;
 
-procedure TCEPDAO.InserirDados(const CEP: TCEP);
-var
-  Query: TFDQuery;
-  SQL: string;
-begin
-  try
-    try
-      Query:= TFDQuery.Create(nil);
-      Query.Connection:= FConnection;
-      Query.Transaction:= FTransaction;
-
-      SQL:= 'INSERT INTO TBCEP (CEP, UF, Cidade, Bairro, Logradouro) VALUES ('
-        + QuotedSTr(CEP.CEP) + ','
-        + QuotedStr(CEP.UF) + ','
-        + QuotedStr(CEP.Cidade) + ','
-        + QuotedStr(CEP.Bairro) + ','
-        + QuotedStr(CEP.Logradouro) + ')';
-
-      TFunctions.ExecutaSQL(SQL, Query);
-    except
-      ShowMessage('Erro ao inserir os dados');
-      raise
-    end
-  finally
-    Query.Free;
-  end;
-end;
-
 procedure TCEPDAO.ManterDados(const CEP: TCEP);
 var
   Query: TFDQuery;
@@ -96,12 +67,12 @@ begin
       Query.Connection:= FConnection;
       Query.Transaction:= FTransaction;
 
-      SQL:= 'UPDATE OR INSERT TBCEP (CEP, UF, CIDADE, BAIRRO, LOGRADOURO) VALUES ('
+      SQL:= 'UPDATE OR INSERT INTO TBCEP (CEP, UF, CIDADE, BAIRRO, LOGRADOURO) VALUES ('
         + QuotedSTr(CEP.CEP) + ','
         + QuotedSTr(CEP.UF) + ','
         + QuotedSTr(CEP.Cidade) + ','
         + QuotedSTr(CEP.Bairro) + ','
-        + QuotedSTr(CEP.Logradouro) + ','
+        + QuotedSTr(CEP.Logradouro)
         + ') MATCHING (CEP)';
 
       TFunctions.ExecutaSQL(SQL, Query);

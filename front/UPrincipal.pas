@@ -5,23 +5,26 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
-  UCEP;
+  UCEP, Vcl.ExtCtrls;
 
 type
   TFPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Label1: TLabel;
     BtnPesquisar: TButton;
     MEdtCEP: TMaskEdit;
-    Label1: TLabel;
-    EdtCEP: TEdit;
-    Label2: TLabel;
-    EdtUF: TEdit;
-    Label3: TLabel;
-    EdtCidade: TEdit;
-    Label4: TLabel;
     EdtBairro: TEdit;
-    Label5: TLabel;
+    EdtCEP: TEdit;
+    EdtCidade: TEdit;
     EdtLogradouro: TEdit;
+    EdtUF: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     Label6: TLabel;
+    GroupBox1: TGroupBox;
     procedure BtnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
@@ -37,7 +40,7 @@ implementation
 
 {$R *.dfm}
 
-uses UConsultaCEP, UCEPDAO, UDM;
+uses UConsultaCEP, UCEPDAO, UDM, UFunctions;
 
 procedure TFPrincipal.BtnPesquisarClick(Sender: TObject);
 var
@@ -46,6 +49,12 @@ var
   CEPDAO: TCEPDAO;
   CEP: TCEP;
 begin
+  if Length(Trim(MEdtCEP.Text)) <> 9 then
+  begin
+    ShowMessage('CEP Inválido. Preencha o campo corretamente no formato 99999-999');
+    Exit;
+  end;
+
   try
     CEPDAO:= TCEPDAO.Create(DM.FDConnection, DM.FDTransaction);
 
@@ -54,29 +63,41 @@ begin
     if CEP.CEP <> '' then
     begin
       PreencherCampos(CEP);
-      Exit;
-    end;
-
-
-    ConsultaCEP:= TConsultaCEP.Create();
-
-    Retorno:= ConsultaCEP.Consultar(MEdtCEP.Text);
-
-    if (Assigned(Retorno)) and Retorno.Sucesso then
-    begin
-      PreencherCampos(Retorno.CEP);
     end
     else
     begin
-      //Não encontrou
-      //CORRIGIR
-      ShowMessage('CEP não encontrado');
+      try
+        ConsultaCEP:= TConsultaCEP.Create();
+
+        Retorno:= ConsultaCEP.Consultar(MEdtCEP.Text);
+
+        if (Assigned(Retorno)) then
+        begin
+          if Retorno.Sucesso then
+          begin
+            if Retorno.CEP.CEP <> '' then
+            begin
+              PreencherCampos(Retorno.CEP);
+              CEPDAO.ManterDados(Retorno.CEP);
+            end
+            else
+              ShowMessage('CEP não encontrado');
+          end
+          else
+            ShowMessage('Falha ao consultar o CEP: ' + Retorno.Mensagem)
+        end
+        else
+        begin
+          ShowMessage('Erro ao consultar o CEP');
+        end;
+      finally
+        ConsultaCEP.Free;
+        Retorno.Free;
+      end;
     end;
   finally
     CEPDAO.Free;
     CEP.Free;
-    ConsultaCEP.Free;
-    Retorno.Free;
   end;
 end;
 
