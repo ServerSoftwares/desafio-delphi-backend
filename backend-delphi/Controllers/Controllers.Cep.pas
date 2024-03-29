@@ -1,0 +1,140 @@
+﻿unit Controllers.Cep;
+
+interface
+
+uses Horse,
+     System.JSON,
+     System.SysUtils,
+     DataModule.Global;
+
+procedure RegistrarRotas;
+procedure ListarCeps(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure ListarCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure InserirCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure AtualizarCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure DeletarCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure AtualizaBase(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+
+implementation
+
+procedure RegistrarRotas;
+begin
+    THorse.Get('/cep', ListarCeps);
+    THorse.Get('/cep/:cep', ListarCep);
+    THorse.Post('/cep', InserirCep);
+    THorse.Put('/cep/:cep', AtualizarCep);
+    THorse.Delete('/cep/:cep', DeletarCep);
+    //busca cep da viacep
+    THorse.Post('/viacep/:cep', AtualizaBase);
+end;
+
+procedure ListarCeps(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    dm: TDataModule1;
+begin
+    try
+        dm := TDataModule1.Create(nil);
+
+        Res.Send(dm.ListarCeps).Status(200);
+
+    finally
+        FreeAndNil(dm);
+    end;
+end;
+
+procedure ListarCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    dm: TDataModule1;
+begin
+    try
+        dm := TDataModule1.Create(nil);
+
+        Res.Send(dm.ListarCep(Req.Params.Field('cep').AsString)).Status(200);
+    finally
+        FreeAndNil(dm);
+    end;
+end;
+
+procedure InserirCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    dm: TDataModule1;
+    body: TJSONObject;
+    cep: integer;
+    logradouro, bairro, localidade, uf: string;
+begin
+    try
+        try
+            dm := TDataModule1.Create(nil);
+
+            body := Req.Body<TJSONObject>;
+            cep := body.GetValue<integer>('cep', 0);
+            logradouro := body.GetValue<string>('logradouro', '');
+            bairro := body.GetValue<string>('bairro', '');
+            localidade := body.GetValue<string>('localidade', '');
+            uf := body.GetValue<string>('uf', '');
+
+            Res.Send(dm.InserirCep(cep, logradouro, bairro, localidade, uf)).Status(201);
+
+        except on ex:exception do
+            Res.Send('Ocorreu um erro: ' + ex.Message).Status(500);
+        end;
+
+    finally
+        FreeAndNil(dm);
+    end;
+end;
+
+procedure AtualizarCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    dm: TDataModule1;
+    body: TJSONObject;
+    logradouro, bairro, localidade, uf: string;
+begin
+    try
+        try
+            dm := TDataModule1.Create(nil);
+
+            body := Req.Body<TJSONObject>;
+            logradouro := body.GetValue<string>('logradouro', '');
+            bairro := body.GetValue<string>('bairro', '');
+            localidade := body.GetValue<string>('localidade', '');
+            uf := body.GetValue<string>('uf', '');
+
+            Res.Send(dm.AtualizarCep(Req.Params.Field('cep').AsString, logradouro, bairro, localidade, uf)).Status(200);
+
+        except on ex:exception do
+            Res.Send('Ocorreu um erro: ' + ex.Message).Status(500);
+        end;
+
+    finally
+        FreeAndNil(dm);
+    end;
+end;
+
+procedure DeletarCep(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    dm: TDataModule1;
+begin
+    try
+        dm := TDataModule1.Create(nil);
+
+        Res.Send(dm.DeletarCep(Req.Params.Field('cep').AsString)).Status(204);
+    finally
+        FreeAndNil(dm);
+    end;
+end;
+
+procedure AtualizaBase(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    dm: TDataModule1;
+begin
+    try
+        dm := TDataModule1.Create(nil);
+
+        Res.Send(dm.AtualizaBase(Req.Params.Field('cep').AsString)).Status(204);
+    finally
+        FreeAndNil(dm);
+    end;
+end;
+
+end.

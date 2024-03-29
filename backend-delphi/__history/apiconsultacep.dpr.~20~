@@ -1,0 +1,28 @@
+program apiconsultacep;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  Horse,
+  Horse.Jhonson,
+  Horse.CORS,
+  Controllers.Cep,
+
+  DataModule.Global in 'DataModules\DataModule.Global.pas' {Dm: TDm},
+  Controllers.Cep in 'Controllers\Controllers.Cep.pas';
+
+begin
+
+  THorse.Use(Jhonson());
+  THorse.Use(CORS);
+
+  Controllers.Cep.RegistrarRotas;
+
+  THorse.Listen(3002);
+
+end.
+
+
+end.

@@ -1,0 +1,41 @@
+unit uConsultaCEPapi;
+
+interface
+
+uses RESTRequest4D, DataSet.Serialize.Adapter.RESTRequest4D,
+     System.SysUtils, Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+     FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf
+     , FireDAC.Comp.DataSet, FireDAC.Comp.Client,uFormat;
+
+     function ConsultaCEPapi (cCEP : String) : Integer;
+
+     var uMemTable : TFDMemTable;
+
+implementation
+
+function ConsultaCEPapi (cCEP : String) : Integer;
+var
+    Resp : IResponse;
+
+begin
+
+   Resp := TRequest.New.BaseURL('viacep.com.br/ws/'+SomenteNumero(cCep) + '/json')
+           .Adapters(TDataSetSerializeAdapter.New(uMemTable))
+           .Accept('application/json')
+           .Get;
+
+   if Resp.StatusCode = 200 then
+    begin
+        if Resp.Content.IndexOf('erro') > 0 then begin
+           Result := 0;
+        end
+        else
+        begin
+            Result := 1;
+        end;
+    end
+    else
+        Result := 2;
+end;
+
+end.

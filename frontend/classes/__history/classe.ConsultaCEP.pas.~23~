@@ -1,0 +1,116 @@
+unit classe.ConsultaCEP;
+
+interface
+
+uses Vcl.Dialogs, RESTRequest4D, DataSet.Serialize.Adapter.RESTRequest4D,System.Threading,
+     System.SysUtils, Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+     FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+     Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, classe.RetornoCEP, uFormat, uLoading;
+
+type
+  TConsultaCEP = class
+
+  private
+     procedure createUMemTable;
+     procedure destroyUMemTable;
+     procedure createTRetornoCEP;
+     procedure destroyTRetornoCEP;
+     procedure ThreadTerminate(Sender: TOBject);
+  public
+     function ConsultaCEP (cCEP : String) : TRetornoCEP;
+  end;
+
+var uMemTable : TFDMemTable;
+  AretornoCEP : TRetornoCEP;
+
+implementation
+
+procedure TConsultaCEP.ThreadTerminate(Sender: TOBject);
+begin
+    //TLoading.Hide;
+
+    if Sender is TThread then
+    begin
+        if Assigned(TThread(Sender).FatalException) then
+        begin
+            showmessage(Exception(TThread(sender).FatalException).Message);
+            exit;
+        end;
+    end;
+end;
+
+function TConsultaCEP.ConsultaCEP (cCEP : String) : TRetornoCEP;
+var t: TThread;
+    Resp : IResponse;
+begin
+
+   createTRetornoCEP;
+   createUMemTable;
+   //TLoading.Show(frmConsultarCEP, '');
+
+   {*t := TThread.CreateAnonymousThread(procedure
+   var
+      Resp: IResponse;
+   begin*}
+
+      Resp := TRequest.New.BaseURL('viacep.com.br/ws/'+SomenteNumero(cCep) + '/json')
+           .Adapters(TDataSetSerializeAdapter.New(uMemTable))
+           .Accept('application/json')
+           .Get;
+
+      if Resp.StatusCode = 200 then
+      begin
+
+          if Resp.Content.IndexOf('erro') > 0 then begin
+             ShowMessage('CEP não encontrado');
+             exit;
+          end
+          else
+          begin
+              with uMemTable do
+              begin
+
+                AretornoCEP.cep := FieldByName('cep').AsString;
+                AretornoCEP.Logradouro := FieldByName('logradouro').AsString;
+                AretornoCEP.Bairro := FieldByName('bairro').AsString;
+                AretornoCEP.Cidade := FieldByName('localidade').AsString;
+                AretornoCEP.UF := FieldByName('uf').AsString;
+              end;
+              destroyUMemTable;
+
+              result := AretornoCEP;
+          end;
+      end
+      else
+          raise Exception.Create(Resp.Content);
+
+   {*end);
+
+   t.OnTerminate := ThreadTerminate;
+   t.Start;*}
+end;
+
+
+procedure TConsultaCEP.createTRetornoCEP;
+begin
+   AretornoCEP := TRetornoCEP.Create;
+end;
+
+procedure TConsultaCEP.createUMemTable;
+begin
+   uMemTable := TFDMemTable.Create(nil);
+   uMemTable.Active;
+end;
+
+procedure TConsultaCEP.destroyTRetornoCEP;
+begin
+   AretornoCEP.Destroy;
+end;
+
+procedure TConsultaCEP.destroyUMemTable;
+begin
+   uMemTable.Close;
+   FreeAndNil(uMemTable);
+end;
+
+end.

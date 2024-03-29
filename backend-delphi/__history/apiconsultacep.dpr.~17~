@@ -1,0 +1,28 @@
+program apiconsultacep;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses Horse,
+     Horse.Jhonson,
+     Horse.CORS,
+     Controllers.Cardapio,
+     Controllers.Pedido,
+     Controllers.Config;
+
+begin
+
+  THorse.Use(Jhonson());
+    THorse.Use(CORS);
+
+    Controllers.Cardapio.RegistrarRotas;
+    Controllers.Pedido.RegistrarRotas;
+    Controllers.Config.RegistrarRotas;
+
+    THorse.Listen(3002);
+
+end.
+
+
+end.

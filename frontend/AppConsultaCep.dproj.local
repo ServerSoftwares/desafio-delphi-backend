@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/03/20 14:13:50.000.523,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/03/20 16:40:19.000.118,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Projetos\desafio-delphi-backend\frmConsultaCep.pas</Transaction>
+    <Transaction>2024/03/20 16:40:19.000.118,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Projetos\desafio-delphi-backend\frmConsultaCep.dfm</Transaction>
+    <Transaction>2024/03/20 16:40:35.000.057,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Projetos\desafio-delphi-backend\AppConsultaCep.dproj</Transaction>
+    <Transaction>2024/03/20 16:53:36.000.112,=C:\Projetos\desafio-delphi-backend\Unit1.pas</Transaction>
+    <Transaction>2024/03/20 16:53:59.000.837,C:\Projetos\desafio-delphi-backend\Unit1.pas=C:\Projetos\desafio-delphi-backend\uTConsultaCEP.pas</Transaction>
+    <Transaction>2024/03/22 10:26:38.000.311,=C:\Projetos\desafio-delphi-backend\uFormat.pas</Transaction>
+    <Transaction>2024/03/22 11:05:46.000.813,C:\Projetos\desafio-delphi-backend\uTConsultaCEP.pas=</Transaction>
+    <Transaction>2024/03/22 11:06:13.000.515,=C:\Projetos\desafio-delphi-backend\Unit1.pas</Transaction>
+    <Transaction>2024/03/22 11:06:52.000.071,C:\Projetos\desafio-delphi-backend\uConsultaCEPapi.pas=C:\Projetos\desafio-delphi-backend\Unit1.pas</Transaction>
+    <Transaction>2024/03/22 11:57:23.000.294,C:\Projetos\desafio-delphi-backend\TConsultaCEP.pas=C:\Projetos\desafio-delphi-backend\uConsultaCEPapi.pas</Transaction>
+    <Transaction>2024/03/22 12:07:15.000.299,C:\Projetos\desafio-delphi-backend\uConsultaCEP.pas=C:\Projetos\desafio-delphi-backend\TConsultaCEP.pas</Transaction>
+    <Transaction>2024/03/22 13:41:58.000.163,=C:\Projetos\desafio-delphi-backend\Unit1.pas</Transaction>
+    <Transaction>2024/03/22 13:42:39.000.994,C:\Projetos\desafio-delphi-backend\classes\TRetornoCEP.pas=C:\Projetos\desafio-delphi-backend\Unit1.pas</Transaction>
+    <Transaction>2024/03/22 13:45:58.000.537,C:\Projetos\desafio-delphi-backend\classes\uRetornoCEP.pas=C:\Projetos\desafio-delphi-backend\classes\TRetornoCEP.pas</Transaction>
+    <Transaction>2024/03/22 14:09:47.000.320,C:\Projetos\desafio-delphi-backend\classes\classe.RetornoCEP.pas=C:\Projetos\desafio-delphi-backend\classes\uRetornoCEP.pas</Transaction>
+    <Transaction>2024/03/22 14:10:01.000.915,C:\Projetos\desafio-delphi-backend\classe.ConsultaCEP.pas=C:\Projetos\desafio-delphi-backend\uConsultaCEP.pas</Transaction>
+    <Transaction>2024/03/22 19:48:22.000.909,=C:\Projetos\desafio-delphi-backend\classes\classe.ConsultaCEP.pas</Transaction>
+    <Transaction>2024/03/22 19:49:38.000.788,=C:\Projetos\desafio-delphi-backend\units\uFormat.pas</Transaction>
+    <Transaction>2024/03/22 20:37:52.000.086,=C:\Projetos\desafio-delphi-backend\units\uLoading.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="classes"/>
+    <File Path="classes\classe.RetornoCEP.pas"/>
+    <File Path="classes\classe.ConsultaCEP.pas"/>
+    <File Path="units"/>
+    <File Path="units\uFormat.pas"/>
+    <File Path="units\uLoading.pas"/>
+    <File Path="frmConsultaCep.pas"/>
+    <File Path="frmConsultaCep.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

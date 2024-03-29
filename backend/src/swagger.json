@@ -1,0 +1,236 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API Consulta CEP",
+    "description": "A API `Consulta CEP` é disponibilizada através de serviço `HTTP REST`. O objetivo da API Consulta CEP é disponibilizar um determinado endereço a partir do CEP\n## Campos retornados \n  \n| Nome | Tipo | Conteúdo | \n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n  cep         | integer     | Ex: 60130240  |\n  tipoCep     | string      | Possibilidades: logradouro, localidade, bairro, uf  |\n  uf          | string      | Ex: CE  |\n  cidade      | string      | Ex: Fortaleza |\n  bairro      | string      | Ex: São João do Taupe  |\n  endereco    | string      | Ex: Avenia Pontes Vieira  |"
+  },
+  "paths": {
+    "/cep/:cep": {
+      "get": {
+        "tags": [
+          "Consultar CEP"
+        ],
+        "summary": "Consulta CEP",
+        "x-auth-type": "Application",
+        "x-throttling-tier": "Unlimited",
+        "description": "\nApresenta o endereço referente a um CEP\n\n ## Exemplo\n\n  #### Chamada\n  \n    http://localhost:3000/cep/60130240\n    \n  #### Retorno\n    {\n      \"cep\": \"60130240\",\n      \"tipoCep\": \"logradouro\",\n     \"uf\": \"CE\",\n      \"cidade\": \"Fortaleza\",\n      \"bairro\": \"São João do Tauape\",\n      \"endereco\": \"Avenida Pontes Vieira\",\n }",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cep",
+            "description": "Número do CEP",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados de endereço do referentes ao CEP",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "http://localhost:3000/cep/60130240"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "CEP inválido."
+          },
+          "404": {
+            "description": "CEP não encontrado"
+          },
+          "500": {
+            "description": "Erros do backend e/ou dos servidores de dados"
+          }
+        }
+      }
+    },
+    "/cep": {
+      "get": {
+        "tags": [
+          "Consultar todos os CEP"
+        ],
+        "summary": "Consulta todo os CEP",
+        "x-auth-type": "Application",
+        "x-throttling-tier": "Unlimited",
+        "description": "\nApresenta o endereço referente a um CEP\n\n ## Exemplo\n\n  #### Chamada\n  \n    http://localhost:3000/cep\n    \n  #### Retorno\n    {\n      \"cep\": \"60130240\",\n      \"tipoCep\": \"logradouro\",\n     \"uf\": \"CE\",\n      \"cidade\": \"Fortaleza\",\n      \"bairro\": \"São João do Tauape\",\n      \"endereco\": \"Avenida Pontes Vieira\",\n }",
+        "responses": {
+          "200": {
+            "description": "Retorna todos os CEPs cadastrados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "http://localhost:3000/cep"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "CEP inválido."
+          },
+          "404": {
+            "description": "CEP não encontrado"
+          },
+          "500": {
+            "description": "Erros do backend e/ou dos servidores de dados"
+          }
+        }
+      }
+    },
+    "cep/:cep": {
+      "post": {
+        "tags": [
+          "Salvar um CEP"
+        ],
+        "summary": "Salvar um CEP",
+        "x-auth-type": "Application",
+        "x-throttling-tier": "Unlimited",
+        "description": "Cadastra o cep na base passando apenas o numero do CEP por parametro",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cep",
+            "description": "Número do CEP",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cadastra um cep na base ",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "http://localhost:3000/cep/:cep"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "CEP inválido."
+          },
+          "404": {
+            "description": "CEP não encontrado"
+          },
+          "500": {
+            "description": "Erros do backend e/ou dos servidores de dados"
+          }
+        }
+      }
+    },
+    "cep/:cep/": {
+      "delete": {
+        "tags": [
+          "Deleta um CEP"
+        ],
+        "summary": "Deleta um CEP",
+        "x-auth-type": "Application",
+        "x-throttling-tier": "Unlimited",
+        "description": "Deleta um CEP por parametro",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cep",
+            "description": "Número do CEP",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleta um cep na base ",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "http://localhost:3000/cep/:cep"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "CEP inválido."
+          },
+          "404": {
+            "description": "CEP não encontrado"
+          },
+          "500": {
+            "description": "Erros do backend e/ou dos servidores de dados"
+          }
+        }
+      }
+    },
+    "//cep/:cep": {
+      "put": {
+        "tags": [
+          "Atualiza um CEP"
+        ],
+        "summary": "Atualiza um CEP",
+        "x-auth-type": "Application",
+        "x-throttling-tier": "Unlimited",
+        "description": "\nApresenta o endereço referente a um CEP\n\n ## Exemplo\n\n  #### Chamada\n  \n    http://localhost:3000/cep\n    \n  #### Retorno\n    {\n      \"cep\": \"60130240\",\n      \"tipoCep\": \"logradouro\",\n     \"uf\": \"CE\",\n      \"cidade\": \"Fortaleza\",\n      \"bairro\": \"São João do Tauape\",\n      \"endereco\": \"Avenida Pontes Vieira\",\n }",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cep",
+            "description": "Número do CEP",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Atualiza um CEP cadastrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "http://localhost:3000/cep/:cep"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "CEP inválido."
+          },
+          "404": {
+            "description": "CEP não encontrado"
+          },
+          "500": {
+            "description": "Erros do backend e/ou dos servidores de dados"
+          }
+        }
+      }
+    }
+  },
+    "schemas": {
+      "ConsultaCep": {
+        "type": "object",
+        "properties": {
+          "cep": {
+            "type": "string"
+          },
+          "logradouro": {
+            "type": "string"
+          },
+          "bairro": {
+            "type": "string"
+          },
+          "localidade": {
+            "type": "string"
+          },
+          "uf": {
+            "type": "string"
+          }
+        }
+      }
+    }
+}

@@ -1,0 +1,85 @@
+unit classe.RetornoCEP;
+
+interface
+
+
+type
+  TRetornoCEP = class
+
+  private
+    Cep: string;
+    Uf: string;
+    Bairro: string;
+    Cidade: string;
+    Logradouro: string;
+
+    procedure SetCep (cep: string);
+    function GetCep : string;
+    procedure SetUf (uf: string);
+    function GetUf : string;
+    procedure SetBairro (bairro: string);
+    function GetBairro : string;
+    procedure SetCidade (cidade: string);
+    function GetCidade : string;
+    procedure SetLogradouro (logradouro: string);
+    function GetLogradouro : string;
+
+  public
+
+  end;
+
+implementation
+
+{ TRetornoCEP }
+
+function TRetornoCEP.GetBairro: string;
+begin
+  result := Bairro;
+end;
+
+function TRetornoCEP.GetCep: string;
+begin
+  result := Cep;
+end;
+
+function TRetornoCEP.GetCidade: string;
+begin
+  result := Cidade;
+end;
+
+function TRetornoCEP.GetLogradouro: string;
+begin
+  result := Logradouro;
+end;
+
+function TRetornoCEP.GetUf: string;
+begin
+  result := Uf;
+end;
+
+procedure TRetornoCEP.SetBairro(bairro: string);
+begin
+  Bairro := bairro;
+end;
+
+procedure TRetornoCEP.SetCep(cep: string);
+begin
+  Cep := cep;
+end;
+
+procedure TRetornoCEP.SetCidade(cidade: string);
+begin
+  Cidade := cidade;
+end;
+
+procedure TRetornoCEP.SetLogradouro(logradouro: string);
+begin
+  Logradouro := logradouro;
+end;
+
+procedure TRetornoCEP.SetUf(uf: string);
+begin
+  Uf := uf;
+end;
+
+end.

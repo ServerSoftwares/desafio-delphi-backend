@@ -1,0 +1,34 @@
+unit classe.RetornoCEP;
+
+interface
+
+uses System.SysUtils, Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+     FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+     Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TRetornoCEP = class
+
+  private
+
+    Fcep: string;
+    Fuf: string;
+    Fbairro: string;
+    Fcidade: string;
+    Flogradouro: string;
+
+  public
+    property cep : string read Fcep write Fcep;
+    property uf : string read Fuf write Fuf;
+    property bairro : string read Fbairro write Fbairro;
+    property cidade : string read Fcidade write Fcidade;
+    property logradouro : string read Flogradouro write Flogradouro;
+  end;
+
+implementation
+
+{ TRetornoCEP }
+
+
+
+end.

@@ -1,0 +1,9 @@
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130010,"Rua Joao Gava","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130020,"Rua Joao Enéas de Sá","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130030,"Rua Manoel dos Santos da Silva","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130040,"Rua Coronel João Cândido Muricy","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130050,"Rua Engenheiro José Orontes Pires","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130060,"Rua Doutor Mendes de Araújo","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130070,"Rua Engenheiro Hans Henrique Martin Prueter","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130080,"Rua Vitório João Brunor","Abranches","Curitiba","RS");
+insert into cep (cep,logradouro,bairro,localidade,uf)values(82130090,"Rua José Muggiati Sobrinho","Abranches","Curitiba","RS");

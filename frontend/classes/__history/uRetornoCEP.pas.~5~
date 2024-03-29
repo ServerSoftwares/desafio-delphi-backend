@@ -1,0 +1,25 @@
+unit uRetornoCEP;
+
+interface
+
+
+type
+  TRetornoCEP = class
+
+  private
+    Cep: string;
+    Uf: string;
+    Bairro: string;
+    Cidade: string;
+    Logradouro: string;
+
+    function SetCep (cep: string);
+    function GetCep (cep: string);
+
+  public
+    property Cep: string read GetCep write SetCep;
+  end;
+
+implementation
+
+end.

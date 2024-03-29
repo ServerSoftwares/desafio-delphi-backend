@@ -1,0 +1,10 @@
+create table cep(
+    cep integer primary key,
+    logradouro varchar(300),
+    bairro varchar(100),
+    localidade varchar(100),
+    uf varchar(2)				
+);
+
+
+

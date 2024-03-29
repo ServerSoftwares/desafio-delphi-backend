@@ -1,0 +1,33 @@
+unit uRetornoCEP;
+
+interface
+
+
+type
+  TRetornoCEP = class
+
+  private
+    Cep: string;
+    Uf: string;
+    Bairro: string;
+    Cidade: string;
+    Logradouro: string;
+
+    procedure SetCep (cep: string);
+    function GetCep : string;
+    procedure SetUf (uf: string);
+    function GetUf : string;
+    procedure SetBairro (bairro: string);
+    function GetBairro : string;
+    procedure SetCidade (cidade: string);
+    function GetCidade : string;
+    procedure SetLogradouro (cep: string);
+    function GetLogradouro : string;
+
+  public
+
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,91 @@
+unit frmConsultaCep;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.NumberBox, Vcl.Mask, uFormat, RESTRequest4D, DataSet.Serialize.Adapter.RESTRequest4D,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, uConsultaCEPapi;
+
+type
+  TformConsultaCep = class(TForm)
+    Label1: TLabel;
+    btnConsultar: TButton;
+    Panel1: TPanel;
+    edCEP: TMaskEdit;
+    Panel2: TPanel;
+    Label2: TLabel;
+    Label3: TLabel;
+    edtLogradouro: TEdit;
+    Label4: TLabel;
+    edtBairro: TEdit;
+    Label5: TLabel;
+    edtCidade: TEdit;
+    Label6: TLabel;
+    edtUF: TEdit;
+    MemTable: TFDMemTable;
+    edtCEP: TEdit;
+    procedure btnConsultarClick(Sender: TObject);
+    procedure edCEPChange(Sender: TObject);
+
+  private
+    { Private declarations }
+    function ValidaCEP(cCep: string): Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  formConsultaCep: TformConsultaCep;
+
+implementation
+
+{$R *.dfm}
+
+procedure TformConsultaCep.btnConsultarClick(Sender: TObject);
+begin
+
+  ValidaCEP(edCEP.Text)
+
+end;
+
+procedure TformConsultaCep.edCEPChange(Sender: TObject);
+begin
+   Formatar(edCep, TFormato.CEP);
+end;
+
+function TformConsultaCep.ValidaCEP(cCep: string): Boolean;
+begin
+
+    //validar dados
+    if SomenteNumero(edCEP.Text) <> '' then begin
+
+       if SomenteNumero(cCep).Length <> 8 then
+       begin
+          ShowMessage('CEP inválido');
+          exit;
+       end
+       else begin
+
+          if () then
+
+          with MemTable do
+          begin
+            edtCEP.Text := FieldByName('cep').AsString;
+            edtLogradouro.Text := FieldByName('logradouro').AsString;
+            edtBairro.Text := FieldByName('bairro').AsString;
+            edtCidade.Text := FieldByName('localidade').AsString;
+            edtUF.Text := FieldByName('uf').AsString;
+          end;
+       end;
+    end
+    else begin
+      ShowMessage('Favor, informe um CEP');
+      exit;
+    end;
+end;
+
+end.

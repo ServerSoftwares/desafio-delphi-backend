@@ -1,0 +1,17 @@
+program AppConsultaCep;
+
+uses
+  Vcl.Forms,
+  frmConsultaCep in 'frmConsultaCep.pas' {formConsultaCep},
+  uFormat in 'uFormat.pas',
+  classe.ConsultaCEP in 'classe.ConsultaCEP.pas',
+  classe.RetornoCEP in 'classes\classe.RetornoCEP.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TformConsultaCep, formConsultaCep);
+  Application.Run;
+end.

@@ -1,0 +1,24 @@
+unit uRetornoCEP;
+
+interface
+
+
+type
+  TRetornoCEP = class
+
+    cep: string;
+    uf: string;
+    bairro: string;
+    cidade: string;
+    logradouro: string;
+
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+end.

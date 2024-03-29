@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/03/27 11:36:14.000.835,C:\Projetos\desafio-delphi-backend\backend-delphi\apiconsultacep.dproj=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/03/28 13:19:46.000.173,=C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas</Transaction>
+    <Transaction>2024/03/28 13:20:15.000.865,C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas=C:\Projetos\desafio-delphi-backend\backend-delphi\DataModules\DataModule.Global.pas</Transaction>
+    <Transaction>2024/03/28 13:20:56.000.162,C:\Projetos\desafio-delphi-backend\backend-delphi\DataModules\DataModule.Global.pas=</Transaction>
+    <Transaction>2024/03/28 13:21:29.000.425,=C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas</Transaction>
+    <Transaction>2024/03/28 13:21:50.000.625,C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.dfm=C:\Projetos\desafio-delphi-backend\backend-delphi\DataModules\DataModule.Global.dfm</Transaction>
+    <Transaction>2024/03/28 13:21:50.000.625,C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas=C:\Projetos\desafio-delphi-backend\backend-delphi\DataModules\DataModule.Global.pas</Transaction>
+    <Transaction>2024/03/28 13:31:58.000.263,=C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas</Transaction>
+    <Transaction>2024/03/28 13:32:20.000.406,C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas=C:\Projetos\desafio-delphi-backend\backend-delphi\Controllers\Controllers.Cep.pas</Transaction>
+    <Transaction>2024/03/28 13:43:03.000.822,C:\Projetos\desafio-delphi-backend\backend-delphi\Controllers\Controllers.Cep.pas=</Transaction>
+    <Transaction>2024/03/28 13:44:39.000.758,=C:\Projetos\desafio-delphi-backend\backend-delphi\Controllers\Controllers.Cep.pas</Transaction>
+    <Transaction>2024/03/28 14:17:11.000.352,=C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas</Transaction>
+    <Transaction>2024/03/28 14:18:09.000.266,C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.pas=C:\Projetos\desafio-delphi-backend\backend-delphi\DataModules\DataModule.Global.pas</Transaction>
+    <Transaction>2024/03/28 14:18:09.000.266,C:\Projetos\desafio-delphi-backend\backend-delphi\Unit1.dfm=C:\Projetos\desafio-delphi-backend\backend-delphi\DataModules\DataModule.Global.dfm</Transaction>
+    <Transaction>2024/03/28 17:44:56.000.989,=C:\Projetos\desafio-delphi-backend\backend-delphi\units\uFormat.pas</Transaction>
+  </Transactions>
+</BorlandProject>

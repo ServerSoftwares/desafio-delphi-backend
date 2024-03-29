@@ -1,0 +1,11 @@
+object DataModule1: TDataModule1
+  Height = 3000
+  Width = 4000
+  PixelsPerInch = 240
+  object Conn: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite')
+    Left = 424
+    Top = 344
+  end
+end
