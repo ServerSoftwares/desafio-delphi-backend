@@ -1,0 +1,57 @@
+object frmPrincipalView: TfrmPrincipalView
+  Left = 0
+  Top = 0
+  Caption = 'Principal'
+  ClientHeight = 456
+  ClientWidth = 501
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
+  TextHeight = 15
+  object lblCEP: TLabel
+    Left = 220
+    Top = 191
+    Width = 27
+    Height = 21
+    Caption = 'CEP'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    Font.Quality = fqClearTypeNatural
+    ParentFont = False
+  end
+  object edtCEP: TMaskEdit
+    Left = 220
+    Top = 217
+    Width = 91
+    Height = 29
+    Enabled = False
+    EditMask = '99999-999;0;'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    Font.Quality = fqClearTypeNatural
+    MaxLength = 9
+    ParentFont = False
+    TabOrder = 0
+    Text = ''
+  end
+  object btnPesquisar: TButton
+    Left = 220
+    Top = 252
+    Width = 91
+    Height = 37
+    Caption = 'Pesquisar'
+    TabOrder = 1
+  end
+end

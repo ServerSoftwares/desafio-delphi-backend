@@ -1,0 +1,2 @@
+Olá, sou o João Gabriel. comecei o teste na sexta feira (23/03/2024) e terminei hoje, na segunda (25). para que o programa funcione normalmente apenas altere o caminho da base (MINHA_BASE.FDB) na classe uConexao.
+A api que utilizei foi a viacep. 

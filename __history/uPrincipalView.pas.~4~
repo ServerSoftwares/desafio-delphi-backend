@@ -1,0 +1,27 @@
+unit uPrincipalView;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TfrmPrincipalView = class(TForm)
+    edtCEP: TMaskEdit;
+    lblCEP: TLabel;
+    btnPesquisar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipalView: TfrmPrincipalView;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,96 @@
+unit uCepDao;
+
+interface
+
+uses Data.DB, System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.FMXUI.Wait,FireDAC.Comp.Client, uConexao, uCepModel, FireDAC.DApt,
+  uValidarModel;
+type TCepDao = class
+  private
+  FConexao: TConexao;
+
+   constructor Create;
+  public
+
+  function getCep(Cep: string): TFDQuery;
+  procedure setCep(Cep: TCepModel);
+
+end;
+
+implementation
+
+{ TCepDao }
+
+uses uCepController;
+
+constructor TCepDao.Create;
+begin
+  FConexao := TCepController.GetInstance().Conexao;
+end;
+
+function TCepDao.getCep(Cep: string): TFDQuery;
+var
+  VQuery: TFDQuery;
+  VCep: TCepModel;
+begin
+  with TCepController.GetInstance() do
+    VQuery := Conexao.CriarQuery;
+
+  VQuery.SQL.Text := 'select * from cep where cep = :cep';
+  VQuery.ParamByName('cep').AsString := Cep;
+  VQuery.Open;
+
+  result := VQuery;
+end;
+
+procedure TCepDao.setCep(Cep: TCepModel);
+var
+  VQuery: TFDQuery;
+  VValidar: TValidarModel;
+begin
+  with TCepController.GetInstance() do
+    VQuery := Conexao.CriarQuery;
+
+  VValidar := TValidarModel.Create;
+  try
+    VQuery.SQL.Text := 'select * from cep where cep = :cep ';
+    VQuery.ParamByName('cep').AsString := Cep.cep;
+    VQuery.Open;
+
+    if VQuery.IsEmpty then
+    begin
+      VQuery.SQL.Clear;
+      VQuery.SQL.Text :=
+      'INSERT INTO     '+
+      '  cep           '+
+      '(               '+
+      '  cep,          '+
+      '  uf,           '+
+      '  bairro,       '+
+      '  cidade,       '+
+      '  logradouro    '+
+      ')               '+
+      'VALUES (        '+
+      '  :cep,         '+
+      '  :uf,          '+
+      '  :bairro,      '+
+      '  :cidade,      '+
+      '  :logradouro   '+
+      ');              ';
+      VQuery.ParamByName('cep').AsString         := VValidar.RemoverNaoNumericos(Cep.cep);
+      VQuery.ParamByName('uf').AsString          := Cep.uf;
+      VQuery.ParamByName('bairro').AsString      := Cep.bairro;
+      VQuery.ParamByName('cidade').AsString      := Cep.cidade;
+      VQuery.ParamByName('logradouro').AsString  := Cep.logradouro;
+      VQuery.ExecSQL;
+    end;
+  finally
+    VQuery.Close;
+    FreeAndNil(VQuery);
+    FreeAndNil(VValidar);
+  end;
+end;
+
+end.

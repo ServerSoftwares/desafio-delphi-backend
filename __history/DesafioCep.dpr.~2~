@@ -1,0 +1,14 @@
+program DesafioCep;
+
+uses
+  Vcl.Forms,
+  uPrincipalView in 'uPrincipalView.pas' {frmPrincipalView};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipalView, frmPrincipalView);
+  Application.Run;
+end.

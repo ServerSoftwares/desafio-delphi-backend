@@ -1,0 +1,140 @@
+unit uCepModel;
+
+interface
+
+uses System.SysUtils, Vcl.Mask, Vcl.Forms, Winapi.Windows,
+  FireDAC.Comp.Client, System.JSON, System.Net.HttpClient, FireDAC.DApt;
+
+type TCepModel = class
+  private
+    Flogradouro: string;
+    Fbairro: string;
+    Fuf: string;
+    Fcep: string;
+    Fcidade: string;
+    procedure Setbairro(const Value: string);
+    procedure Setcep(const Value: string);
+    procedure Setcidade(const Value: string);
+    procedure Setlogradouro(const Value: string);
+    procedure Setuf(const Value: string);
+  public
+  property cep: string read Fcep write Setcep;
+  property uf: string read Fuf write Setuf;
+  property bairro: string read Fbairro write Setbairro;
+  property cidade: string read Fcidade write Setcidade;
+  property logradouro: string read Flogradouro write Setlogradouro;
+
+  function Pesquisar(Cep: string): TFDQuery;
+  function getCEP(CEP: String): TCepModel;
+  procedure PesquisarCepAPI(cep: string);
+  function TratarErros(cep: string): boolean;
+end;
+
+implementation
+
+{ TCepModel }
+
+uses uCepDao;
+
+
+function TCepModel.getCEP(CEP: String): TCepModel;
+var
+  HTTPClient: THTTPClient;
+  JSON: TJSONObject;
+begin
+  HTTPClient := THTTPClient.Create;
+  try
+    JSON := TJSONObject.ParseJSONValue(HTTPClient.Get('https://viacep.com.br/ws/' + CEP + '/json/').ContentAsString) as TJSONObject;
+    try
+      if JSON.Count <> 1 then
+      begin
+        Self.cep         := JSON.GetValue('cep').Value;
+        Self.Logradouro  := JSON.GetValue('logradouro').Value;
+        Self.Bairro      := JSON.GetValue('bairro').Value;
+        Self.cidade      := JSON.GetValue('localidade').Value;
+        Self.UF          := JSON.GetValue('uf').Value;
+
+        Result := Self;
+      end;
+    finally
+      JSON.Free;
+    end;
+  except
+    raise;
+    HTTPClient.Free;
+  end;
+end;
+function TCepModel.Pesquisar(Cep: string): TFDQuery;
+var
+  VCepDAO: TCepDao;
+begin
+  VCepDAO := TCepDao.Create;
+  try
+   result := VCepDAO.getCep(cep);
+  finally
+    FreeAndNil(VCepDAO);
+  end;
+end;
+
+procedure TCepModel.PesquisarCepAPI(cep: string);
+var
+  VCepDAO: TCepDao;
+  VCep: TCepModel;
+begin
+  VCepDAO := TCepDao.Create;
+  VCep    := TCepModel.Create;
+  try
+    VCep := Self.getCEP(cep);
+
+    VCepDao.setCep(VCep);
+  finally
+    FreeAndNil(VCepDAO);
+    FreeAndNil(VCep);
+  end;
+end;
+
+procedure TCepModel.Setbairro(const Value: string);
+begin
+  Fbairro := Value;
+end;
+
+procedure TCepModel.Setcep(const Value: string);
+begin
+  Fcep := Value;
+end;
+
+procedure TCepModel.Setcidade(const Value: string);
+begin
+  Fcidade := Value;
+end;
+
+procedure TCepModel.Setlogradouro(const Value: string);
+begin
+  Flogradouro := Value;
+end;
+
+procedure TCepModel.Setuf(const Value: string);
+begin
+  Fuf := Value;
+end;
+
+function TCepModel.TratarErros(cep: string): boolean;
+begin
+  if cep = '' then
+  begin
+    Application.MessageBox('Por favor, insira um CEP.', 'Aviso', MB_OK or MB_ICONWARNING);
+    result := false;
+    exit;
+  end;
+
+  if Length(Cep) < 8 then
+  begin
+    Application.MessageBox('O CEP informado está incompleto.', 'Aviso', MB_OK or MB_ICONWARNING);
+    result := false;
+    exit;
+  end;
+
+  result := true;
+end;
+
+end.

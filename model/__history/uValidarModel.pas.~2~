@@ -1,0 +1,10 @@
+unit uValidarModel;
+
+interface
+type TValidarModel = class
+
+end;
+
+implementation
+
+end.
