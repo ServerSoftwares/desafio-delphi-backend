@@ -1,0 +1,300 @@
+03/04/2024 18:24:35 : CEP 13290000 não encontrado.
+
+03/04/2024 18:24:38 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 18:24:41 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 18:24:44 : CEP 13290002 não encontrado.
+
+03/04/2024 18:28:21 : CEP 13290000 não encontrado.
+
+03/04/2024 18:28:28 : CEP 13290001 encontrado com sucesso.
+Falha ao inserir o CEP 13290001 no banco de dados.
+
+03/04/2024 18:28:30 : CEP 13290002 não encontrado.
+
+03/04/2024 18:28:31 : CEP 13290003 encontrado com sucesso.
+Falha ao inserir o CEP 13290003 no banco de dados.
+
+03/04/2024 18:29:22 : CEP 13290000 não encontrado.
+
+03/04/2024 18:29:23 : CEP 13290001 encontrado com sucesso.
+Falha ao inserir o CEP 13290001 no banco de dados.
+
+03/04/2024 18:29:25 : CEP 13290002 não encontrado.
+
+03/04/2024 18:29:32 : CEP 13290003 encontrado com sucesso.
+Falha ao inserir o CEP 13290003 no banco de dados.
+
+03/04/2024 18:36:52 : CEP 13290000 não encontrado.
+
+03/04/2024 18:36:58 : CEP 13290002 não encontrado.
+
+03/04/2024 18:36:59 : CEP 13290001 encontrado com sucesso.
+Falha ao inserir o CEP 13290001 no banco de dados.
+
+03/04/2024 18:37:05 : CEP 13290004 não encontrado.
+
+03/04/2024 18:37:06 : CEP 13290005 encontrado com sucesso.
+Falha ao inserir o CEP 13290005 no banco de dado03/04/2024 18:38:03 : CEP 13290000 não encontrado.
+
+03/04/2024 18:38:13 : CEP 13290009 não encontrado.
+
+03/04/2024 18:38:21 : CEP 13290005 encontrado com sucesso.
+Falha ao inserir o CEP 13290005 no banco de dados.
+
+03/04/2024 18:38:23 : CEP 13290008 não encontrado.
+
+03/04/2024 18:38:24 : CEP 13290003 encontrado com sucesso.
+Falha ao inserir o CEP 13290003 no banco de dados.
+
+03/04/2024 18:38:27 : CEP 13290006 não encontrado.
+
+03/04/2024 18:38:31 : CEP 13290002 não encontrado.
+
+03/04/2024 18:38:36 : CEP 13290004 não encontrado.
+
+03/04/2024 18:38:44 : CEP 13290007 não encontrado.
+
+03/04/2024 18:38:55 : CEP 13290001 encontrado com sucesso.
+Falha ao inserir o CEP 13290001 no banco de dados.
+
+03/04/2024 18:39:24 : CEP 13290010 encontrado co03/04/2024 18:40:11 : CEP 13290000 não encontrado.
+
+03/04/2024 18:40:18 : CEP 13290002 não encontrado.
+
+03/04/2024 18:40:26 : CEP 13290001 encontrado com sucesso.
+Falha ao inserir o CEP 13290001 no banco de dados.
+
+03/04/2024 18:40:28 : CEP 13290008 não encontrado.
+
+03/04/2024 18:40:29 : CEP 13290003 encontrado com sucesso.
+Falha ao inserir o CEP 13290003 no banco de dados.
+
+03/04/2024 18:40:31 : CEP 13290007 não encontrado.
+
+03/04/2024 18:40:34 : CEP 13290009 não encontrado.
+
+03/04/2024 18:40:37 : CEP 13290006 não encontrado.
+
+03/04/2024 18:40:40 : CEP 13290010 encontrado com sucesso.
+CEP 13290010 inserido no banco de dados com sucesso!
+
+03/04/2024 18:40:44 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 18:41:37 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 18:41:40 : CEP 13290000 não encontrado.
+
+03/04/2024 18:41:44 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no b03/04/2024 18:42:27 : CEP 13290000 não encontrado.
+
+03/04/2024 18:42:30 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 18:42:33 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 18:42:36 : CEP 13290002 não encontrado.
+
+03/04/2024 18:43:08 : CEP 13290000 não encontrado.
+
+03/04/2024 18:43:11 : CEP 13290002 não encontrado.
+
+03/04/2024 18:43:14 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 18:43:17 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:06:49 : CEP 13290000 não encontrado.
+
+03/04/2024 19:06:53 : CEP 13290002 não encontrado.
+
+03/04/2024 19:06:56 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:06:59 : CEP 13290004 não encontrado.
+
+03/04/2024 19:07:02 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:07:05 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:07:09 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:07:12 : CEP 13290000 não encontrado.
+
+03/04/2024 19:07:15 : CEP 13290002 não encontrado.
+
+03/04/2024 19:07:18 : CEP 13290004 não encontrado.
+
+03/04/2024 19:07:22 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:07:25 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:08:30 : CEP 13290000 não encontrado.
+
+03/04/2024 19:08:34 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:08:37 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:08:40 : CEP 13290002 não encontrado.
+
+03/04/2024 19:08:43 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:08:46 : CEP 13290004 não encontrado.
+
+03/04/2024 19:10:09 : CEP 13290000 não encontrado.
+
+03/04/2024 19:10:25 : CEP 13290000 não encontrado.
+
+03/04/2024 19:10:28 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:10:31 : CEP 13290002 não encontrado.
+
+03/04/2024 19:10:35 : CEP 13290004 não encontrado.
+
+03/04/2024 19:10:38 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:10:41 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:25:32 : CEP 13290000 não encontrado.
+
+03/04/2024 19:25:35 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:25:38 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:25:42 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:25:45 : CEP 13290004 não encontrado.
+
+03/04/2024 19:25:48 : CEP 13290002 não encontrado.
+
+03/04/2024 19:25:52 : CEP 13290000 não encontrado.
+
+03/04/2024 19:25:55 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:25:58 : CEP 13290002 não encontrado.
+
+03/04/2024 19:26:01 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:26:04 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:26:07 : CEP 13290004 não encontrado.
+
+03/04/2024 19:26:12 : CEP 13290000 não encontrado.
+
+03/04/2024 19:26:15 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:26:18 : CEP 13290002 não encontrado.
+
+03/04/2024 19:26:21 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:26:24 : CEP 13290004 não encontrado.
+
+03/04/2024 19:26:27 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:26:32 : CEP 13290000 não encontrado.
+
+03/04/2024 19:26:35 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:26:38 : CEP 13290002 não encontrado.
+
+03/04/2024 19:26:41 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:26:44 : CEP 13290004 não encontrado.
+
+03/04/2024 19:26:48 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:27:34 : CEP 13290000 não encontrado.
+
+03/04/2024 19:27:38 : CEP 13290002 não encontrado.
+
+03/04/2024 19:27:41 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:27:44 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:27:47 : CEP 13290003 encontrad03/04/2024 19:50:01 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:50:04 : CEP 13290002 não encontrado.
+
+03/04/2024 19:50:07 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:50:10 : CEP 13290004 não encontrado.
+
+03/04/2024 19:50:14 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:50:18 : CEP 13290001 encontrado com sucesso.
+CEP 13290001 inserido no banco de dados com sucesso!
+
+03/04/2024 19:50:21 : CEP 13290002 não encontrado.
+
+03/04/2024 19:50:24 : CEP 13290004 não encontrado.
+
+03/04/2024 19:50:28 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:50:31 : CEP 13290003 encontrado com sucesso.
+CEP 13290003 inserido no banco de dados com sucesso!
+
+03/04/2024 19:52:52 : CEP 13290005 encontrado com sucesso.
+CEP 13290005 inserido no banco de dados com sucesso!
+
+03/04/2024 19:52:55 : CEP 13290007 não encontrado.
+
+03/04/2024 19:52:59 : CEP 13290006 não encontrado.
+
+03/04/2024 19:53:02 : CEP 13290008 não encontrado.
+
+03/04/2024 19:53:05 : CEP 13290009 não encontrado.
+
+03/04/2024 20:23:14 : CEP 13294100 encontrado com sucesso.
+CEP 13294100 inserido no banco de dados com sucesso!
+
+03/04/2024 20:23:17 : CEP 13294101 não encontrado.
+
+03/04/2024 20:23:20 : CEP 13294105 não encontrado.
+
+03/04/2024 20:23:23 : CEP 13294106 encontrado com sucesso.
+CEP 13294106 inserido no banco de dados com sucesso!
+
+03/04/2024 20:23:27 : CEP 13294104 encontrado com sucesso.
+CEP 13294104 inserido no banco de dados com sucesso!
+
+03/04/2024 20:23:31 : CEP 13294103 não encontrado.
+
+03/04/2024 20:23:34 : CEP 13294102 encontrado com sucesso.
+CEP 13294102 inserido no banco de dados com sucesso!
+

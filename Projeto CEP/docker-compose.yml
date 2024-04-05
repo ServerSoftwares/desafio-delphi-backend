@@ -1,0 +1,15 @@
+version: '2'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+   
+    environment:
+      POSTGRES_DB: ServerSoftwareVarejo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: masterkey

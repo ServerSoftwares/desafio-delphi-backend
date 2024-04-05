@@ -1,0 +1,28 @@
+{
+  "name": "projeto-cep",
+  "version": "1.0.0",
+  "description": "Projeto de gerenciamento de CEPs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon backend/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CEP"
+  ],
+  "type": "module",
+  "author": "Tiago da Silva Montalvão",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.11.3",
+    "sequelize": "^6.37.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
