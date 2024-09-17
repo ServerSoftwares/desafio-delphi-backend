@@ -1,0 +1,61 @@
+unit UCEPDAO;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, Vcl.Dialogs,
+
+  UCEP;
+
+type
+  TCEPDAO = class
+  private
+    FConnection: TFDConnection;
+    FTransaction: TFDTransaction;
+  public
+    constructor Create(AConnection: TFDConnection; ATransaction: TFDTransaction);
+    procedure InserirDados(const CEP: TCEP);
+    function BuscarPorCEP(const ACEP: string): TCEP;
+
+
+  end;
+
+implementation
+
+uses UFunctions;
+{ TCEPDAO }
+
+function TCEPDAO.BuscarPorCEP(const ACEP: string): TCEP;
+var
+  FQuery: TFDQuery;
+begin
+  FQuery.Connection:= FConnection;
+  FQuery.Transaction:= FTransaction;
+
+  TFunctions
+end;
+
+constructor TCEPDAO.Create(AConnection: TFDConnection; ATransaction: TFDTransaction);
+begin
+  FConnection := AConnection;
+end;
+
+procedure TCEPDAO.InserirDados(const CEP: TCEP);
+begin
+  try
+    FConnection.ExecSQL(
+      'INSERT INTO TBCEP (CEP, UF, Cidade, Bairro, Logradouro) VALUES (:CEP, :UF, :Cidade, :Bairro, :Logradouro)',
+      [CEP.CEP, CEP.UF, CEP.Cidade, CEP.Bairro, CEP.Logradouro]
+    );
+  except
+    ShowMessage('Erro ao inserir os dados');
+    raise
+  end;
+end;
+
+end.

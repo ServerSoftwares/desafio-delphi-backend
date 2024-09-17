@@ -1,0 +1,78 @@
+unit UPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TFPrincipal = class(TForm)
+    BtnPesquisar: TButton;
+    MEdtCEP: TMaskEdit;
+    Label1: TLabel;
+    EdtCEP: TEdit;
+    Label2: TLabel;
+    EdtUF: TEdit;
+    Label3: TLabel;
+    EdtCidade: TEdit;
+    Label4: TLabel;
+    EdtBairro: TEdit;
+    Label5: TLabel;
+    EdtLogradouro: TEdit;
+    Label6: TLabel;
+    procedure BtnPesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPrincipal: TFPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses UConsultaCEP, UCEP;
+
+procedure TFPrincipal.BtnPesquisarClick(Sender: TObject);
+var
+  ConsultaCEP: TConsultaCEP;
+  Retorno: TRetornoCEP;
+begin
+  try
+    ConsultaCEP:= TConsultaCEP.Create();
+
+    Retorno:= ConsultaCEP.Consultar(MEdtCEP.Text);
+
+    if Assigned(Retorno) then
+    begin
+      if Retorno.Sucesso then
+      begin
+        EdtCEP.Text:= Retorno.CEP.CEP;
+        EdtUF.Text:= Retorno.CEP.UF;
+        EdtCidade.Text:= Retorno.CEP.Cidade;
+        EdtBairro.Text:= Retorno.CEP.Bairro;
+        EdtLogradouro.Text:= Retorno.CEP.Logradouro;
+      end
+      else
+      begin
+      //CORRIGIR melhorar
+        ShowMessage('CEP não encontrado');
+      end;
+    end
+    else
+    begin
+      //Não encontrou
+      //CORRIGIR
+    end;
+  finally
+    ConsultaCEP.Free;
+    Retorno.Free;
+  end;
+
+end;
+
+end.

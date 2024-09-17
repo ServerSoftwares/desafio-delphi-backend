@@ -1,0 +1,6 @@
+@api_desafio_delphi_HostAddress = http://localhost:5063
+
+GET {{api_desafio_delphi_HostAddress}}/api/cep/
+Accept: application/json
+
+###

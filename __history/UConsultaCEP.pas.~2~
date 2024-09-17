@@ -1,0 +1,21 @@
+unit UConsultaCEP;
+
+interface
+
+uses
+  UCEP;
+
+type
+  TConsultaCEP = class
+  private
+    FNome: string;
+    FIdade: Integer;
+  public
+    procedure Consultar(Cep: string): TCEP;
+  end;
+
+implementation
+
+
+
+end.

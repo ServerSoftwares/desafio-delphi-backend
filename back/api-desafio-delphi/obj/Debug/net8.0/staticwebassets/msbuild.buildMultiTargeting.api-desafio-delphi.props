@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\api-desafio-delphi.props" />
+</Project>
